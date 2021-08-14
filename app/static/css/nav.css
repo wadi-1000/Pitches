@@ -1,0 +1,26 @@
+#nav{
+    background-color: #fb8537;
+    border: black;
+    border-radius: 0px;
+}
+
+#txt{
+    font-family: 'Gloria Hallelujah', cursive;
+    font-style: oblique;
+    text-align: left;
+    font-size: xx-large;
+    color: white;
+}
+
+#categories{
+    color: white;
+    font-family: 'Mali', cursive;
+    font-weight: bold;
+   
+}
+
+#categories:hover{
+    color: rgb(105, 105, 105);
+    
+}
+
