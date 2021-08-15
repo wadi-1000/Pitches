@@ -1,5 +1,33 @@
-<div class="container">
-<nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="#">Guru</a>
+<link rel="stylesheet" href="{{url_for('static',filename='css/nav.css')}}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mali:wght@200&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+<!-- Top-nav -->
+<div class="navbar navbar-inverse" role="navigation" id="nav">
+    <nav class="navbar navbar-light bg-light" >
+    <a class="navbar-brand" href="#" id="txt">Guru</a>
+
+    <ul class="nav navbar-nav">
+        <li><a href="pickup-line.html" id="categories">Pickup-lines</a></li>
+        <li><a href="promotion.html"id="categories">Promotion</a></li>
+        <li><a href="product.html"id="categories">Product</a></li>
+        <li><a href="interview.html"id="categories">Interview</a></li>
+        <li><a href="twitter.html"id="categories">Twitter</a></li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+        {% if current_user.is_authenticated %}
+        <li style="color:white;padding:15px;">{{current_user.username}}</li>
+        <li><a href="{{url_for('auth.logout')}}">Sign out</a></li>
+        {% else %}
+        <li><a href="{{url_for('auth.login')}}">Sign in</a></li>
+        {%endif%}
+      </ul>
 </nav>
 </div>
+
+
+
