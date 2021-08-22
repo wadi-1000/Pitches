@@ -11,19 +11,21 @@
     <a class="navbar-brand" href="#" id="txt">Guru</a>
 
     <ul class="nav navbar-nav">
-        <li><a href="pickup-line.html" id="categories">Pickup-lines</a></li>
-        <li><a href="promotion.html"id="categories">Promotion</a></li>
-        <li><a href="product.html"id="categories">Product</a></li>
-        <li><a href="interview.html"id="categories">Interview</a></li>
-        <li><a href="twitter.html"id="categories">Twitter</a></li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{url_for('main.index')}}">All Pitches</a>
+        </li>
+        {% if current_user.is_authenticated %}
+        <li class="nav-item">
+            <a class="nav-link" href="{{url_for('main.new_pitch')}}">New Pitch</a>
+        </li>
+        {% endif %}
     </ul>
-
     <ul class="nav navbar-nav navbar-right">
         {% if current_user.is_authenticated %}
-        <li style="color:white;padding:15px;">{{current_user.username}}</li>
-        <li><a href="{{url_for('auth.logout')}}">Sign out</a></li>
+        <li><a href="{{url_for('main.profile',uname=current_user.username)}}">Profile</a></li>
+        <li><a href="{{url_for('auth.logout')}}" id="out">Sign out</a></li>
         {% else %}
-        <li><a href="{{url_for('auth.login')}}">Sign in</a></li>
+        <li><a href="{{url_for('auth.login')}}" id="in">Sign in</a></li>
         {%endif%}
       </ul>
 </nav>

@@ -1,0 +1,4 @@
+Hello {{user.username}}
+Welcome to Guru
+You have just signed up for our application where we help you build your pitching skills through us.
+Please enjoy!
