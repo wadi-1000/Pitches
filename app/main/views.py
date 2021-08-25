@@ -35,7 +35,7 @@ def update_profile(uname):
         db.session.add(user)
         db.session.commit()
 
-        return redirect(url_for('.profile',uname=user.username))
+        return redirect(url_for('.profile',name=user.username))
 
     return render_template('profile/update.html',form =form)
 
@@ -51,7 +51,7 @@ def new_pitch():
         user_id = current_user
         new_pitch_object = Pitch(post=post,user_id=current_user._get_current_object().id,category=category,title=title)
         new_pitch_object.save_p()
-        return redirect(url_for('main.index'))
+        # return redirect(url_for('main.index'))
         
     return render_template('create_pitch.html', form = form)
 @main.route('/comment/<int:pitch_id>', methods = ['POST','GET'])
